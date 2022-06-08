@@ -1,102 +1,92 @@
 package Items;
+import java.util.*;
 import java.util.Scanner;
 import java.lang.Math;
-public  class Item {
+public  class Item extends AreaCalcc{
 	//atributes 
     private String Shape;
 	private String name;
 	private double height;
 	private double width;
-	private double radius;
 	private double length;
 	private double weight;
 	private double volume;
+	private String ItemInfo;
 	private Scanner input = new Scanner(System.in);
     
-	
-	
 	public Item() {
 		super();
-		this.Shape = getShape();
+		setShape(); setName(); setHeight(); setWidth(); setLength(); setWeight();
+		Shape = getShape();
 		this.name = getName();
 		this.height = getHeight();
 		this.width = getWidth();
-		this.radius = getRadius();
 		this.length = getLength();
 		this.weight = getWeight();
+		System.out.println("Information assigned to: " +this.name);
 	}
 	public double getWeight() {
 		return weight;
 	}
-	public void setWeight(double weight) {
-		this.weight = weight;
+	public void setWeight() {
+		System.out.println("Input Weight: ");
+		this.weight = input.nextDouble();
 	}
 	public String getShape() {
 		return Shape;
 	}
-	public void setShape(String shape) {
-		Shape = shape;
+	public void setShape() {
+		System.out.println("Input Shape of packaging: ");
+		this.Shape = input.nextLine();
 	}
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setName() {
+		System.out.println("Input Name: ");
+		this.name = input.nextLine();
 	}
 	public double getHeight() {
 		return height;
 	}
-	public void setHeight(double height) {
-		this.height = height;
+	public void setHeight() {
+		System.out.println("Input Height: ");
+		this.height = input.nextDouble();
 	}
 	public double getWidth() {
 		return width;
 	}
-	public void setWidth(double width) {
-		this.width = width;
-	}
-	public double getRadius() {
-		return radius;
-	}
-	public void setRadius(double radius) {
-		this.radius = radius;
+	public void setWidth() {
+		System.out.println("Input Width: ");
+		this.width = input.nextDouble();
 	}
 	public double getLength() {
 		return length;
 	}
-	public void setLength(double length) {
-		this.length = length;
+	public void setLength() {
+		System.out.println("Input Length: ");
+		this.length = input.nextDouble();
 	}
-	
-	public double itemVol(){
-		int x;
-		System.out.println("Select shape options: 1.Cylinder 2.Pentagon 3.Cube 4.Rectangle 5.Triangle");
-		 x = input.nextInt();
-		 if(x == 1) {
-			 volume = Math.PI * (radius*radius) * height;
-			 System.out.println("The volume is: " +volume);
-		 }else if(x == 2) {
-			 volume = (5/2)*(width*length*height);
-			 System.out.println("The volume is: " +volume);
-		 }else if(x == 3) {
-			 volume = length*length*length;
-			 System.out.println("The volume is: " +volume);
-		 }else if(x ==4 ) {
-			 volume = width*length*height;
-			 System.out.println("The volume is: " +volume);
-		 }else if(x == 5) {
-			 volume = (1/2)*(width*length*height);
-		 }else {
-			 System.out.println("ERROR");
-			 System.exit(1);
-		 }
+	public double VolumeCalc() {
+		double volume;
+		volume = AreaCalc(length, width) * height;
 		return volume;
 	}
-	public void PrintIt() {
-		
+	public void setIteminfo() {
+		List<String> Info = new ArrayList();
+		String Info1;
+		Info1 = ("product name is: " +getName() +" ,");
+		Info1 = Info1 + (" product shape is: " + getShape() +" ,");
+		Info1 = Info1 + (" The weight is: " + getWeight()+ " m3");
+		Info1 = Info1 + (" the height is: "  +getHeight()+ " m3");
+		Info1 = Info1 + (" the width is: "  +getWidth() + " m3");
+		Info1 = Info1 + (" the Length is: "  +getLength()+ " m3");
+		Info.add(Info1);
+		System.out.println(Info);
+		}
+	public String getItemInfo() {
+		return ItemInfo;
 	}
-		
-	
 	
 	
 }
