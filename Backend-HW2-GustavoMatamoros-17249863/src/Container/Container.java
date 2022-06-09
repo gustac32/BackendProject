@@ -47,10 +47,10 @@ public class Container {
 		System.out.println("information assigned: ");
 		System.out.println("the container selected is: " +this.Name);
 		System.out.println("its specifications are: "+" height: " +this.height +" length: " +this.length + " width: " + this.width);
+		System.out.println("the volume is: " +VolumeCalc());
 	}
 	public double VolumeCalc() {
 		double x = height*length*width;
-		System.out.println("the volume for container is: " +x + " m3");
         return x;
 	}
 	

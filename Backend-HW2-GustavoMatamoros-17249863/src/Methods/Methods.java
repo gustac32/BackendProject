@@ -12,47 +12,47 @@ public class Methods  {
 //Use comma when putting decimal on length
 	public void setPrice(double TotalV,double ContainerSmall,double weight) {
 		if(TotalV <= ContainerSmall) {
-				if(weight <= 500) {
+		      if(weight <= 500) {
 					System.out.println("Price is 1000" +" €" + " per container");
 					price = 1000;
-				}else{
+				 }else{
 					System.out.println("Price is 1200" + " €" + " per container");
 					price = 1200;
-				}	
-			}else {
+				   }	
+			        }else {
 				System.out.println("price is 1800" + " €" + " per container");
 				price = 1800;
 			}
 		}
 		
-	public double TotalVolume(int x,double shipmentVolume) {
+	    public double TotalVolume(int x,double shipmentVolume) {
 		double z = x * shipmentVolume;
 		System.out.println("the total Volume for this order is: " +z + " m3");
 		return z;
 		
 	}
 	
-	public double TotalWeight(int x, double weight) {
+	    public double TotalWeight(int x, double weight) {
 		double z;
 		z = x * weight;
 		System.out.println("the total weight for the order is: " +z + " kg");
 		return z;
 	}
-	public double ShippingMethod(double volumeSmall,double volumeB,double volumeShipment) {
+	    public double ShippingMethod(double volumeSmall,double volumeB,double volumeShipment) {
 	    double type = volumeShipment/volumeB;
 		if(volumeShipment <= volumeSmall) {
 			System.out.println("Small container Assigned");
-		}if(volumeShipment/volumeB <= 1.0 ) {
+		 }if(volumeShipment/volumeB <= 1.0 ) {
 			System.out.println("Big container assigned");
 			return 1;
-		}else {
+		  }else {
 			type = volumeShipment/volumeB;
 			System.out.println("number of: " +(int)type +" of big containers are selected");
 			return (int)type;
 		}
 	}
 	
-	public void addOrderinfo(double TotalWeight , double TotalVol,int price) {
+	    public void addOrderinfo(double TotalWeight , double TotalVol,int price) {
 		System.out.println("final weight is: " +TotalWeight + " kg");
 		System.out.println("final Volume is: " +TotalVol + " m3");
 		System.out.println("the final price is: " +price + " €");

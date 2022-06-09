@@ -77,7 +77,7 @@ public  class Item extends AreaCalcc{
 		String Info1;
 		Info1 = ("product name is: " +getName() +" ,");
 		Info1 = Info1 + (" product shape is: " + getShape() +" ,");
-		Info1 = Info1 + (" The weight is: " + getWeight()+ " m3");
+		Info1 = Info1 + (" The weight is: " + getWeight()+ " kg");
 		Info1 = Info1 + (" the height is: "  +getHeight()+ " m3");
 		Info1 = Info1 + (" the width is: "  +getWidth() + " m3");
 		Info1 = Info1 + (" the Length is: "  +getLength()+ " m3");
