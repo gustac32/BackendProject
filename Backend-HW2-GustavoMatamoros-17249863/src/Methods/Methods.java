@@ -27,7 +27,6 @@ public class Methods  {
 		
 	    public double TotalVolume(int x,double shipmentVolume) {
 		double z = x * shipmentVolume;
-		System.out.println("the total Volume for this order is: " +z + " m3");
 		return z;
 		
 	}
@@ -39,10 +38,12 @@ public class Methods  {
 		return z;
 	}
 	    public double ShippingMethod(double volumeSmall,double volumeB,double volumeShipment) {
-	    double type = volumeShipment/volumeB;
+	    double type;
 		if(volumeShipment <= volumeSmall) {
 			System.out.println("Small container Assigned");
-		 }if(volumeShipment/volumeB <= 1.0 ) {
+			return 1;
+		 }
+		if(volumeShipment/volumeB <= 1.0 ) {
 			System.out.println("Big container assigned");
 			return 1;
 		  }else {
@@ -50,6 +51,7 @@ public class Methods  {
 			System.out.println("number of: " +(int)type +" of big containers are selected");
 			return (int)type;
 		}
+		
 	}
 	
 	    public void addOrderinfo(double TotalWeight , double TotalVol,int price) {

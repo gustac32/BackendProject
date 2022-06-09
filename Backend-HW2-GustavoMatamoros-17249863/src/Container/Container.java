@@ -1,4 +1,6 @@
 package Container;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 public class Container {
 	private double height;
@@ -44,11 +46,17 @@ public class Container {
 		Name = name;
 	}
 	public  void PrintInfo() {
-		System.out.println("information assigned: ");
-		System.out.println("the container selected is: " +this.Name);
-		System.out.println("its specifications are: "+" height: " +this.height +" length: " +this.length + " width: " + this.width);
-		System.out.println("the volume is: " +VolumeCalc());
-	}
+		List<String> Info = new ArrayList();
+		String Info1;
+		Info1 = ("container is: " +this.Name);
+		Info1 = Info1 + (" The specifications are: ");
+		Info1 = Info1 + (" the height is: "  +this.height + " m");
+		Info1 = Info1 + (" the width is: "  +this.width+ " m");
+		Info1 = Info1 + (" the Length is: "  +this.length+ " m");
+		Info1 = Info1 + (" the volume for the container is: " +VolumeCalc() + " m3");
+		Info.add(Info1);
+		System.out.println(Info);
+		}
 	public double VolumeCalc() {
 		double x = height*length*width;
         return x;
