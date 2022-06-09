@@ -23,21 +23,17 @@ public class Test {
 	    Bigc.PrintInfo();
 	    smallC.PrintInfo();
 	    //add al volumes from the orders
-	    totalVol = metho.TotalVolume(100, Laptops.VolumeCalc())
-	    + metho.TotalVolume(200, mouse.VolumeCalc()) 
-	    + metho.TotalVolume(150, Desktop.VolumeCalc()) 
-	    + metho.TotalVolume(200,LCDSC.VolumeCalc());
+	    totalVol = metho.TotalVolume(100, Laptops.VolumeCalc()) + metho.TotalVolume(200, mouse.VolumeCalc()) 
+	    + metho.TotalVolume(150, Desktop.VolumeCalc()) + metho.TotalVolume(200,LCDSC.VolumeCalc());
 	    //add all the total weight for the orders
-	    TotalWeight = metho.TotalWeight(100, Laptops.getWeight())
-	    + metho.TotalWeight(200, mouse.getWeight()) 
-	    + metho.TotalWeight(150, Desktop.getWeight())
-	    + metho.TotalWeight(200, LCDSC.getWeight());
+	    TotalWeight = metho.TotalWeight(100, Laptops.getWeight()) + metho.TotalWeight(200, mouse.getWeight()) 
+	    + metho.TotalWeight(150, Desktop.getWeight()) + metho.TotalWeight(200, LCDSC.getWeight());
+	    //set price for the orders
 	    metho.setPrice(totalVol, smallC.VolumeCalc(), TotalWeight);
-	    //add all prices per order 
+	    //add all prices per order dependent on shipping method
 		price = (int) metho.ShippingMethod(smallC.VolumeCalc(), Bigc.VolumeCalc(), totalVol) * metho.getPrice();
 		//get the information of the orders
 		metho.addOrderinfo(TotalWeight, totalVol, price);
-		
 		
 	}
 
