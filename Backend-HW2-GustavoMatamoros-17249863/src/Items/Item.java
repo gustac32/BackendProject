@@ -2,6 +2,7 @@ package Items;
 import java.util.*;
 import java.util.Scanner;
 import java.lang.Math;
+//class extends area class to make the volume calculator work
 public  class Item extends AreaCalcc{
 	//atributes 
     private String Shape;
@@ -13,7 +14,7 @@ public  class Item extends AreaCalcc{
 	private double volume;
 	private String ItemInfo;
 	private Scanner input = new Scanner(System.in);
-    
+    //constructor using getters and setters
 	public Item() {
 		super();
 		setShape(); setName(); setHeight(); setWidth(); setLength(); setWeight();
@@ -25,6 +26,7 @@ public  class Item extends AreaCalcc{
 		this.weight = getWeight();
 		System.out.println("Information assigned to: " +this.name);
 	}
+	//setters and getters each setter has a scanner function to input data 
 	public double getWeight() {
 		return weight;
 	}
@@ -43,7 +45,6 @@ public  class Item extends AreaCalcc{
 		return name;
 	}
 	public void setName() {
-		System.out.println("Input Name: ");
 		this.name = input.nextLine();
 	}
 	public double getHeight() {
@@ -67,11 +68,13 @@ public  class Item extends AreaCalcc{
 		System.out.println("Input Length: ");
 		this.length = input.nextDouble();
 	}
+	//method of volume calculation plus the area calculation 
 	public double VolumeCalc() {
 		double volume;
 		volume = AreaCalc(length, width) * height;
 		return volume;
 	}
+	//setter and getter to print item information 
 	public void setIteminfo() {
 		List<String> Info = new ArrayList();
 		String Info1;
@@ -87,6 +90,7 @@ public  class Item extends AreaCalcc{
 	public String getItemInfo() {
 		return ItemInfo;
 	}
-	
+	//use comma as decimal
+	//Gustavo Matamoros
 	
 }

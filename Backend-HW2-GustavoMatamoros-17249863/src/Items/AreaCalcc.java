@@ -1,7 +1,9 @@
 package Items;
 import java.lang.Math;
 import java.util.Scanner;
+//class to calculate area different to shape input
 public abstract class  AreaCalcc  {
+	//assigning attributes
 	private String str;
 	private Scanner input = new Scanner(System.in);
 	private String name;
@@ -10,7 +12,7 @@ public abstract class  AreaCalcc  {
 	private double width;
 	private double length;
     private double weight;
-    
+    //area method to calculate
 	public double AreaCalc(double width,double length) {
 		double a;
 		int y;

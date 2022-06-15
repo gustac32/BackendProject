@@ -2,7 +2,6 @@ package Test;
 import Items.*;
 import Methods.*;
 import Container.*;
-import java.util.*;
 public class Test {
 
 	public static void main(String[] args) {
@@ -34,6 +33,7 @@ public class Test {
 		price = (int) metho.ShippingMethod(smallC.VolumeCalc(), Bigc.VolumeCalc(), totalVol) * metho.getPrice();
 		//get the information of the orders
 		metho.addOrderinfo(TotalWeight, totalVol, price);
+		System.out.println("hola");
 		
 	}
 
