@@ -1,18 +1,23 @@
 package GUI;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.*;
 import java.awt.event.*;
 import Items.Item;
+import Methods.Methods;
 public class GUItrials {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//create object
 		
+
 		String[] shape = {"round","square","rectangular"};
-		
+		Item it = new Item();
       JFrame frame = new JFrame("Shipping company");
-      JLabel label1 = new JLabel("Item name", JLabel.LEFT);
+      JLabel quantity = new JLabel("Enter products Quantity: ");
+      JLabel weight = new JLabel("Enter product's Weight: ");
+      JLabel label1 = new JLabel("Item name: ", JLabel.LEFT);
       label1.setForeground(Color.BLACK);
       label1.setBounds(20, 20, 120, 30);
       
@@ -24,10 +29,25 @@ public class GUItrials {
       panel.setLayout(null);
       
       JButton btn = new JButton("Submit");
-   
-      
-     JButton btn2 = new JButton("cancel");
-     
+      //
+      JFrame frame1 = new JFrame("Volume");
+	      JTextField Quan = new JTextField();
+	      Quan.setBounds(200, 40, 120, 30);
+	      Quan.setText("0");
+	      double sq = Double.parseDouble(Quan.getText());
+	      System.out.println(it.getQuantity());
+	      JTextField wei = new JTextField();
+	      wei.setBounds(200, 70, 120, 30);
+			   frame1.setSize(400, 500);
+			   JPanel panel1 = new JPanel();
+			   panel1.setLayout(null);
+			   weight.setBounds(30, 70, 200, 30);
+			   quantity.setBounds(30, 40, 200, 30);
+			   panel1.add(Quan);
+			   panel1.add(wei);
+			   panel1.add(weight);
+			   panel1.add(quantity);
+			   frame1.add(panel1);
       JTextField tf = new JTextField();
       tf.setBounds(220, 20, 130, 30);
       
@@ -76,7 +96,6 @@ public class GUItrials {
       panel.add(label1);
       panel.add(label2);
       panel.add(btn, BorderLayout.SOUTH);
-      panel.add(btn2);
       panel.add(tf);
       frame.add(panel);
       
@@ -84,10 +103,9 @@ public class GUItrials {
   		@Override
   		public void actionPerformed(ActionEvent e) {
   		    String r = tf.getText();
-  			System.out.println("the item name is: " +r);
+  		    it.setName(r);
   		   if(r1.isSelected()) {
-  			   JFrame frame1 = new JFrame("test");
-  			   frame1.setVisible(true);
+   			   frame1.setVisible(true);
   			   String r11 = r1.getName();
   			   System.out.println("the shape is: " +r11);
   		   }else if(r2.isSelected()) {
@@ -103,7 +121,6 @@ public class GUItrials {
       frame.getContentPane().add(BorderLayout.SOUTH, btn);   
       //end program when click on close
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      
       //set visible
       frame.setVisible(true);
       

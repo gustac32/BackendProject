@@ -27,7 +27,8 @@ public class Methods  {
 			}
 		}
 		//total volume method per order
-	    public double TotalVolume(int OrderAmount,double shipmentVolume) {
+	    public double TotalVolume(double OrderAmount, double shipmentVolume) {
+	    	
 		double z = OrderAmount * shipmentVolume;
 		return z;
 		
