@@ -35,7 +35,7 @@ public class GUItrials {
 	      Quan.setBounds(200, 40, 120, 30);
 	      Quan.setText("0");
 	      double sq = Double.parseDouble(Quan.getText());
-	      System.out.println(it.getQuantity());
+	      it.setQuantity(sq);
 	      JTextField wei = new JTextField();
 	      wei.setBounds(200, 70, 120, 30);
 			   frame1.setSize(400, 500);
@@ -48,6 +48,8 @@ public class GUItrials {
 			   panel1.add(weight);
 			   panel1.add(quantity);
 			   frame1.add(panel1);
+			   
+			   
       JTextField tf = new JTextField();
       tf.setBounds(220, 20, 130, 30);
       
